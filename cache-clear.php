@@ -53,7 +53,7 @@ if ( is_admin() ) {
 				return $html;
 			}
 
-			if ( is_user_logged_in() && current_user_can( 'manage_options' ) ) {
+			if ( is_user_logged_in() ) {
 				return $html;
 			}
 
@@ -68,7 +68,7 @@ if ( is_admin() ) {
 					return $html;
 				}
 			}
-			
+
 			/* 判断是否是POST */
 			if ( $_SERVER['REQUEST_METHOD'] !== "GET" ) {
 				return $html;
