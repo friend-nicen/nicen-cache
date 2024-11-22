@@ -120,6 +120,7 @@ function nicen_cache_when_save_post( $post_id ) {
 
 	/* 首页 */
 	$files[] = nicen_cache_save . '/_';
+	$files[] = nicen_cache_save . '/pages_';
 
 	foreach ( $files as $file ) {
 		nicen_remove_all( $file );
