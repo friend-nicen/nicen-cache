@@ -64,7 +64,7 @@ function nicen_cache_when_save_post( $post_id ) {
 	$post = get_post( $post_id );
 
 	/* 评论时触发 */
-	if ( ! isset( $_GET['action'] ) || ( isset( $_GET['action'] ) && $_GET['action'] == 'edit' ) ) {
+	if ( ! isset( $_POST['action'] ) || ( isset( $_POST['action'] ) && $_POST['action'] !== 'editpost' ) ) {
 		return $post_id;
 	}
 
@@ -72,9 +72,11 @@ function nicen_cache_when_save_post( $post_id ) {
 		return $post_id;
 	}
 
+
 	if ( $post->post_status != 'publish' ) {
 		return $post_id;
 	}
+
 
 	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
 		return $post_id;
