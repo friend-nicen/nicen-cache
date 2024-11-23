@@ -114,9 +114,15 @@ function nicen_cache_when_save_post( $post_id ) {
 	$pattern = nicen_cache_save . "/page"; //匹配规则
 	$files   = array_merge( $files, glob( $pattern ) ); //获取结果
 
+
 	/* 匹配文章 */
 	$pattern = nicen_cache_save . "/*{$post_id}*"; //匹配规则
 	$files   = array_merge( $files, glob( $pattern ) ); //获取结果
+
+	/* 匹配文章 */
+	$pattern = nicen_cache_save . "/*{$post->post_name}*"; //匹配规则
+	$files   = array_merge( $files, glob( $pattern ) ); //获取结果
+
 
 	/* 首页 */
 	$files[] = nicen_cache_save . '/_';
