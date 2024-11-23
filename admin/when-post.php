@@ -153,6 +153,10 @@ function nicen_cache_when_comment( $comment, $comment_status = "" ) {
 	$post    = get_post( $post_id );
 	$pattern = nicen_cache_save . "/*{$post->ID}*"; //匹配规则
 	$files   = glob( $pattern ); //获取结果
+	/* 匹配文章 */
+	$pattern = nicen_cache_save . "/*{$post->post_name}*"; //匹配规则
+	$files   = array_merge( $files, glob( $pattern ) ); //获取结果
+
 	foreach ( $files as $file ) {
 		nicen_remove_all( $file );
 	}
