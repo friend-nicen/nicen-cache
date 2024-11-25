@@ -56,7 +56,14 @@ const PLUGIN_nicen_cache = [
 						'callback' => 'nicen_cache_form_switch'
 					]
 				]
-			]
+			],
+			[
+				"id"       => "nicen_cache_update",
+				'title'    => '插件升级',
+				'callback' => [
+					"after" => "nicen_cache_update"
+				],
+			],
 		]
 	]
 ];

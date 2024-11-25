@@ -1,12 +1,12 @@
 <?php
 /**
- * Plugin Name: Cache-Clear
+ * Plugin Name: Nicen-Cache
  * Plugin URI:https://nicen.cn/7759.html
  * Description: 静态缓存管理
  * Version: 1.0.0
  * Author: 友人a丶
  * Author URI: https://nicen.cn
- * Text Domain: Cache-Clear
+ * Text Domain: Nicen-Cache
  * License: GPLv2 or later
  */
 

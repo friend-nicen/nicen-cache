@@ -330,6 +330,9 @@ jQuery(function () {
                 activeKey: tab, //激活的yab
                 loading: false, //是否正在处理
                 zhCN: zhCN, //语言包
+                version: '', //版本号
+                html: '',//版本说明
+                donate: [], //捐赠链接
                 labelCol: {xxl: 4, xl: 6, lg: 8, md: 10, sm: 12, xs: 12}, //表单标签
             };
         },
@@ -373,6 +376,21 @@ jQuery(function () {
                 this.batch.range[0] = range[0].format("YYYY-MM-DD");
                 this.batch.range[1] = range[1].format("YYYY-MM-DD");
             }
+        },
+        created() {
+            /* 当前 */
+            let that = this;
+            /*同步插件更新日志*/
+            axios.get("https://weixin.nicen.cn/api/cache")
+                .then((res) => {
+                    if (res.data.code) {
+                        that.html = res.data.data.info;
+                        that.version = res.data.data.latest;
+                        that.donate = res.data.data.donate;
+                    }
+                }).catch(e => {
+                console.log(e)
+            })
         }
     });
 });
