@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Cache-Clear
- * Plugin URI:https://nicen.cn/2893.html
+ * Plugin URI:https://nicen.cn/7759.html
  * Description: 静态缓存管理
  * Version: 1.0.0
  * Author: 友人a丶
